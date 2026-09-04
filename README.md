@@ -67,20 +67,7 @@ present at the repository root.
 
 
 
-
-
- Video Walkthrough
-
-<!-- Replace with your unlisted YouTube link -->
-[YouTube video walkthrough](https://youtu.be/YOUR-VIDEO-ID)
-
-The video walks through:
-- The planning documents and how they map to the RaceDay system
-- The ERD and the reasoning behind each entity and relationship
-- The API endpoint plan and key design choices
-- A live run of the SQL script in SSMS
-
-## Author
+Author
 
 
 KOKETSO KHALO-ST10477909
