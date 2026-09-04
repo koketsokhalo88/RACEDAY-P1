@@ -1,9 +1,48 @@
-raceday-poe/
-├── docs/
-│   ├── RaceDay_ERD.pdf
-│   ├── RaceDay_API_Endpoint_Plan.md
-│   └── RaceDay_Schema.sql
-├── .github/
-│   └── workflows/
-│       └── validate-docs.yml
-└── README.md
+name: Validate Docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate required documentation exists
+        run: |
+          echo "Checking required files..."
+          
+          # Check docs folder
+          if [ ! -d "docs" ]; then
+            echo "::error::docs/ folder not found"
+            exit 1
+          fi
+
+          # Check required files
+          FILES=(
+            "docs/RaceDay_ERD.pdf"
+            "docs/RaceDay_API_Endpoint_Plan.md"
+            "docs/RaceDay_Schema.sql"
+            "README.md"
+          )
+
+          MISSING=0
+          for FILE in "${FILES[@]}"; do
+            if [ -f "$FILE" ]; then
+              echo "✓ Found $FILE"
+            else
+              echo "::error::Missing required file: $FILE"
+              MISSING=1
+            fi
+          done
+
+          if [ $MISSING -eq 1 ]; then
+            exit 1
+          fi
+
+          echo "All required docs present."
