@@ -1,0 +1,9 @@
+raceday-poe/
+├── docs/
+│   ├── RaceDay_ERD.pdf
+│   ├── RaceDay_API_Endpoint_Plan.md
+│   └── RaceDay_Schema.sql
+├── .github/
+│   └── workflows/
+│       └── validate-docs.yml
+└── README.md
