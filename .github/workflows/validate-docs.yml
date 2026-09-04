@@ -26,7 +26,7 @@ jobs:
           # Check required files
           FILES=(
             "docs/RaceDay_ERD.pdf"
-            "docs/RaceDay_API_Endpoint.pdf"
+            "docs/RaceDay_API_Endpoint_Plan.pdf"
             "docs/RaceDay_Schema.sql"
             "README.md"
           )
