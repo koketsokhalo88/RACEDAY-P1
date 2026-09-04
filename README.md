@@ -29,7 +29,7 @@ The system supports two roles:
 
 /docs
   RaceDay_ERD.pdf                  - Entity Relationship Diagram
-  RaceDay_API_Endpoint_Plan.md     - API endpoint specification table
+  RaceDay_API_Endpoint_Plan.pdf     - API endpoint specification table
   RaceDay_Schema.sql               - SQL Server database creation + seed script
 .github/workflows/
   validate-docs.yml                - GitHub Actions workflow validating repo structure
@@ -55,7 +55,7 @@ To run the script:
 
 The full endpoint plan — covering authentication, user profile, events,
 categories, enrolments, and results — is in
-docs/RaceDay_API_Endpoint_Plan.md.
+docs/RaceDay_API_Endpoint_Plan.pdf.
 
  CI/CD
 
@@ -63,6 +63,7 @@ A GitHub Actions workflow (.github/workflows/validate-docs.yml) runs on every
 push and pull request. It checks that the /docs folder exists and contains
 the required ERD image, endpoint plan, and SQL script, and that README.md is
 present at the repository root.
+![CI/CD build](docs/ci-success.png)
 
 
 
